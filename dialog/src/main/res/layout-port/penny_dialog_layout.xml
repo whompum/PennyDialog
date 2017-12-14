@@ -1,6 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<android.support.design.widget.CoordinatorLayout
+    xmlns:california="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    california:layout_width="wrap_content"
+    california:layout_height="wrap_content">
 
-</LinearLayout>
+
+    <LinearLayout
+        california:orientation="vertical"
+        california:layout_width="match_parent"
+        california:layout_height="wrap_content">
+
+
+        <include layout="@layout/value_container"
+                 california:id="@+id/valueFrame"/>
+
+        <include layout="@layout/numbers_container"/>
+
+
+    </LinearLayout>
+
+
+    <android.support.design.widget.FloatingActionButton
+        app:fabSize="mini"
+        app:layout_anchor="@id/valueFrame"
+        app:layout_anchorGravity="center|bottom|end"
+        app:backgroundTint="?attr/doneFabBackgroundTint"
+        california:layout_marginRight="@dimen/doneFabMargin"
+        california:layout_marginEnd="@dimen/doneFabMargin"
+        california:layout_width="wrap_content"
+        california:layout_height="wrap_content" />
+
+</android.support.design.widget.CoordinatorLayout>

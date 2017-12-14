@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Dialog" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="valueCardColor">@color/light_blue</item>
+        <item name="numbersCardColor">@color/light_grey</item>
+        <item name="valueTextStyle">@style/ValueTextStyle</item>
+        <item name="doneFabBackgroundTint">@color/white</item>
+    </style>
+
+    <style name="ValueTextStyle">
+        <item name="android:textSize">@dimen/valueTextSize</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:clickable">false</item>
+        <item name="android:textCursorDrawable">@null</item>
+        <item name="android:maxLines">@dimen/valueMaxLines</item>
+        <item name="android:layout_margin">@dimen/valueMargin</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="NumbersStyle">
+        <item name="android:minWidth">@dimen/numbersWidth</item>
+        <item name="android:layout_width">@dimen/numbersWidth</item>
+        <item name="android:layout_height">@dimen/numbersHeight</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:textSize">@dimen/numbersTextSize</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+
+</resources>

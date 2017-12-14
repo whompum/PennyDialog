@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:california="http://schemas.android.com/apk/res/android"
+    california:padding="16dp"
+    california:background="?attr/valueCardColor"
+    california:layout_width="match_parent"
+    california:layout_height="wrap_content">
+
+    <currencyedittext.whompum.com.currencyedittext.CurrencyEditText
+        style="?attr/valueTextStyle"
+        california:layout_width="wrap_content"
+        california:layout_height="wrap_content" />
+
+</FrameLayout>
