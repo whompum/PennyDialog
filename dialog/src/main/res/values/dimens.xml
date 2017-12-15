@@ -5,7 +5,6 @@
     <dimen name="valueMargin">60dp</dimen>
 
     <dimen name="valueTextSize">32sp</dimen>
-    <dimen name="valueMaxLines">1</dimen>
 
 
     <dimen name="numbersTextSize">24sp</dimen>

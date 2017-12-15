@@ -2,6 +2,7 @@
 <android.support.design.widget.CoordinatorLayout
     xmlns:california="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:test="http://schemas.android.com/apk/com.whompum.pennydialog.dialog"
     california:layout_width="wrap_content"
     california:layout_height="wrap_content">
 
@@ -15,7 +16,7 @@
         <include layout="@layout/value_container"
                  california:id="@+id/valueFrame"/>
 
-        <include layout="@layout/numbers_container"/>
+       <include layout="@layout/numbers_container"/>
 
 
     </LinearLayout>
@@ -25,7 +26,11 @@
         app:fabSize="mini"
         app:layout_anchor="@id/valueFrame"
         app:layout_anchorGravity="center|bottom|end"
-        app:backgroundTint="?attr/doneFabBackgroundTint"
+        app:backgroundTint="@color/white"
+        california:scaleX="0"
+        california:scaleY="0"
+        california:visibility="invisible"
+        california:id="@id/doneFab"
         california:layout_marginRight="@dimen/doneFabMargin"
         california:layout_marginEnd="@dimen/doneFabMargin"
         california:layout_width="wrap_content"

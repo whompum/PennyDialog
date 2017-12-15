@@ -2,5 +2,11 @@
 <resources>
 
     <item name="numbersGrid" type="id"/>
+    <item name="valueEditText" type="id"/>
+
+    <item name="backspaceButton" type="id"/>
+    <item name="deleteButton" type="id"/>
+
+    <item name="doneFab" type="id"/>
 
 </resources>
