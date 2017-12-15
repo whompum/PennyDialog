@@ -5,12 +5,15 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatDialogFragment;
+import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +22,8 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.widget.Button;
 import android.widget.GridLayout;
+
+import org.w3c.dom.Attr;
 
 import currencyedittext.whompum.com.currencyedittext.CurrencyEditText;
 
@@ -43,12 +48,15 @@ import currencyedittext.whompum.com.currencyedittext.CurrencyEditText;
  *
  */
 
-public class PennyDialog extends AppCompatDialogFragment implements View.OnClickListener {
+public class PennyDialog extends DialogFragment implements View.OnClickListener {
 
-    private static final String TAG = "PennyDialog";
+    public static final String TAG = "PennyDialog";
 
     private static final int LAYOUT_RES = R.layout.penny_dialog_layout;
 
+
+
+    public static final String STYLE_KEY = "STYLE";
     private static final String PENNY_KEY = "total"; //Bundles Penny value key
     private static final String CASH_KEY = "cash"; //Bundles Cash value key
 
@@ -84,6 +92,12 @@ public class PennyDialog extends AppCompatDialogFragment implements View.OnClick
 
     private Interpolator fabInterpolator = new AccelerateDecelerateInterpolator();
 
+    public PennyDialog(){
+
+    }
+
+
+
     /**
      * Creates an Instance of this object, and returns it to the client
      *
@@ -93,6 +107,7 @@ public class PennyDialog extends AppCompatDialogFragment implements View.OnClick
     public static PennyDialog newInstance(@Nullable final Bundle args){
         final PennyDialog pennyDialog = new PennyDialog();
         pennyDialog.setArguments(args);
+
     return pennyDialog;
     }
 
@@ -131,7 +146,19 @@ public class PennyDialog extends AppCompatDialogFragment implements View.OnClick
     @NonNull
     @Override //Creates the dialog
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        final Dialog theD = new Dialog(this.getContext());
+
+        /**
+         *
+         */
+
+        final Bundle args = getArguments();
+
+        int style = R.style.Dialog;
+
+        if(args!=null)
+        style = getArguments().getInt("STYLE", R.style.Dialog);
+
+        final Dialog theD = new Dialog(this.getContext(), style);
         theD.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
     return theD;
@@ -145,8 +172,7 @@ public class PennyDialog extends AppCompatDialogFragment implements View.OnClick
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         //Attach to root should be set to true maybe?
-        final View content = inflater.inflate(LAYOUT_RES, container, false);
-
+        final View content = inflater.inflate(LAYOUT_RES, container, true);
 
         this.valueEditText = content.findViewById(R.id.valueEditText);
              valueEditText.setOnCurrencyChangeListener(valueChangeListener);
