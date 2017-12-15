@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:app="http://schemas.android.com/apk/com.whompum.pennydialog.dialog">
+<resources>
 
     <!--
         Base theme for this dialog. It will initialize all basic variables.
@@ -24,6 +24,8 @@
         <item name="pennyBottomLeftRadius">15dp</item>
         <item name="pennyBottomRightRadius">15dp</item>
 
+        <item name="pennyFabBackgroundColor">@color/white</item>
+
         <item name="android:windowBackground">@null</item>
     </style>
 
@@ -38,12 +40,14 @@
 
     <!--Styling used for the CurrenycEditText-->
     <style name="ValueTextStyle">
+        <item name="android:background">@null</item>
         <item name="android:textSize">@dimen/valueTextSize</item>
         <item name="android:textColor">?attr/pennyValueTextColor</item>
         <item name="android:clickable">false</item>
         <item name="android:textCursorDrawable">@null</item>
         <item name="android:maxLines">1</item>
-        <item name="android:layout_margin">@dimen/valueMargin</item>
+        <item name="android:layout_marginTop">@dimen/valueMargin</item>
+        <item name="android:layout_marginBottom">@dimen/valueMargin</item>
         <item name="android:layout_gravity">center</item>
     </style>
 
