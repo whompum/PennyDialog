@@ -3,10 +3,13 @@ package com.whompum.pennydialog.dialog;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.animation.ValueAnimator;
+import android.annotation.TargetApi;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -89,13 +92,9 @@ public class PennyDialog extends DialogFragment implements View.OnClickListener 
 
     private Vibrator vibrator; //vibrates buttons when pressed
 
+    private VibrationEffect vibrationEffect;
 
     private Interpolator fabInterpolator = new AccelerateDecelerateInterpolator();
-
-    public PennyDialog(){
-
-    }
-
 
 
     /**
@@ -141,14 +140,19 @@ public class PennyDialog extends DialogFragment implements View.OnClickListener 
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         vibrator = (Vibrator) getContext().getSystemService(Context.VIBRATOR_SERVICE);
+
+        if(Build.VERSION.SDK_INT >= 26)
+            vibrationEffect = VibrationEffect.createOneShot(75L, 50);
+
+
     }
 
     @NonNull
     @Override //Creates the dialog
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
+    public final Dialog onCreateDialog(Bundle savedInstanceState) {
 
         /**
-         *
+         *Fetch arguments, for styling and what not
          */
 
         final Bundle args = getArguments();
@@ -193,6 +197,19 @@ public class PennyDialog extends DialogFragment implements View.OnClickListener 
     return content;
     }
 
+
+    /**
+     * Save pennie value, and cash value
+     * @param outState bundle to hold money values!
+     */
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        outState.putLong(PENNY_KEY, pennies);
+        outState.putString(CASH_KEY, cash);
+        super.onSaveInstanceState(outState);
+
+    }
+
     /**
      *
      * Iterates through the number grid, and sets an onclick listener on all the views
@@ -231,7 +248,14 @@ public class PennyDialog extends DialogFragment implements View.OnClickListener 
      */
     @Override
     public void onClick(View view) {
+        //TODO add window transition!
 
+        if(cashChangeListener!=null) {
+            cashChangeListener.onPenniesChange(pennies);
+            cashChangeListener.onCashChange(cash);
+        }
+
+        dismiss();
     }
 
     /**
@@ -252,6 +276,7 @@ public class PennyDialog extends DialogFragment implements View.OnClickListener 
             else
                 penny.addPennies(((Button)view).getText().toString());
 
+            vibrate();
         }
     };
 
@@ -272,11 +297,14 @@ public class PennyDialog extends DialogFragment implements View.OnClickListener 
             showFab();
     }
 
+    /**
+     * Launches an animation to hide the fab
+     */
     private void hideFab(){
         addTotalFab.animate()
                 .scaleY(0F)
                 .scaleX(0F)
-                .setDuration(500L)
+                .setDuration(250L)
                 .setInterpolator(fabInterpolator).setListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
@@ -286,11 +314,14 @@ public class PennyDialog extends DialogFragment implements View.OnClickListener 
         }).start();
     }
 
+    /**
+     * Launches an animation to show the fab
+     */
     private void showFab(){
         addTotalFab.animate()
                 .scaleY(1F)
                 .scaleX(1F)
-                .setDuration(500L)
+                .setDuration(250L)
                 .setInterpolator(fabInterpolator).setListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationStart(Animator animation) {
@@ -300,7 +331,17 @@ public class PennyDialog extends DialogFragment implements View.OnClickListener 
         }).start();
     }
 
+    //If this method needs documentation you should feel bad about yourself.
+    private void vibrate(){
+        if(vibrator.hasVibrator())
 
+            if(Build.VERSION.SDK_INT >= 26)
+                vibrator.vibrate(vibrationEffect);
+            else
+                vibrator.vibrate(75L);
+
+
+    }
 
     /**
      * Callback induced whenever the CurrencyEditText object changes its text.
