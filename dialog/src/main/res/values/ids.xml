@@ -7,6 +7,8 @@
     <item name="backspaceButton" type="id"/>
     <item name="deleteButton" type="id"/>
 
-    <item name="doneFab" type="id"/>
+    <item name="pennyFab" type="id"/>
+
+
 
 </resources>
