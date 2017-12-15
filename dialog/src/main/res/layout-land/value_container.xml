@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:california="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    california:background="@drawable/card_left"
+    california:padding="16dp"
+    california:layout_width="wrap_content"
+    california:layout_height="match_parent">
+
+
+    <TextView
+        style="@style/TitleTextStyle"
+        california:layout_width="wrap_content"
+        california:layout_height="wrap_content" />
+
+    <currencyedittext.whompum.com.currencyedittext.CurrencyEditText
+        style="@style/ValueTextStyle"
+        california:id="@id/valueEditText"
+        california:layout_width="wrap_content"
+        california:layout_height="wrap_content" />
+
+</FrameLayout>

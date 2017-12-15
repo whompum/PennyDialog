@@ -51,6 +51,7 @@
     <!-- BACK - ZERO - DEL -->
     <ImageButton
         style="@style/NumbersStyle"
+        california:id="@id/backspaceButton"
         california:scaleType="centerInside"
         california:padding="24dp"
         california:src="@drawable/png_back_button" />
@@ -59,6 +60,7 @@
         california:text="@string/naught" />
     <Button
         style="@style/NumbersStyle"
+        california:id="@id/deleteButton"
         california:text="@string/delete" />
 
 </GridLayout>
