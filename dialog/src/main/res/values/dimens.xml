@@ -4,6 +4,7 @@
     <dimen name="pennyDialogWidth">200dp</dimen>
     <dimen name="valueMargin">60dp</dimen>
 
+    <dimen name="titleTextSize">14sp</dimen>
     <dimen name="valueTextSize">32sp</dimen>
 
 
@@ -14,5 +15,7 @@
     <dimen name="numbersMargin">8dp</dimen>
 
     <dimen name="doneFabMargin">16dp</dimen>
+
+
 
 </resources>

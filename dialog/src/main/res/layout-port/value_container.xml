@@ -7,6 +7,12 @@
     california:layout_width="match_parent"
     california:layout_height="wrap_content">
 
+
+    <TextView
+        style="@style/TitleTextStyle"
+        california:layout_width="wrap_content"
+        california:layout_height="wrap_content" />
+
     <currencyedittext.whompum.com.currencyedittext.CurrencyEditText
         style="@style/ValueTextStyle"
         california:id="@id/valueEditText"

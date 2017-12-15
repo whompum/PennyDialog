@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:app="http://schemas.android.com/apk/com.whompum.pennydialog.dialog">
 
+    <!--
+        Base theme for this dialog. It will initialize all basic variables.
+        Out of the box you have a lightly colored, rounded cornered Number dialog
+        To customize, simply override this theme in your application,
+        change your wanted attributes, and pass the reference in a bundle
+        to the newInstance() method of the PennyDialog!
+    -->
     <style name="Dialog" parent="Base.Theme.AppCompat.Light.Dialog">
         <item name="pennyValueCardColor">@color/light_blue</item>
         <item name="pennyNumbersCardColor">@color/light_grey</item>
@@ -8,7 +15,7 @@
         <item name="pennyValueTextColor">@color/white</item>
 
         <item name="pennyTitleTextColor">?attr/pennyValueTextColor</item>
-        <item name="pennyTitleText">""</item>
+        <item name="pennyTitleText">@string/title</item>
 
         <item name="pennyFabColor">@color/white</item>
 
@@ -20,8 +27,16 @@
         <item name="android:windowBackground">@null</item>
     </style>
 
+    <!--Styling used for the title in the topright corner
+        By default aligns the title to the top left-->
+    <style name="TitleTextStyle">
+        <item name="android:layout_gravity">top|start|left</item>
+        <item name="android:textSize">@dimen/titleTextSize</item>
+        <item name="android:textColor">?attr/pennyTitleTextColor</item>
+        <item name="android:text">?attr/pennyTitleText</item>
+    </style>
 
-
+    <!--Styling used for the CurrenycEditText-->
     <style name="ValueTextStyle">
         <item name="android:textSize">@dimen/valueTextSize</item>
         <item name="android:textColor">?attr/pennyValueTextColor</item>
@@ -32,6 +47,7 @@
         <item name="android:layout_gravity">center</item>
     </style>
 
+    <!--Styling applied on the number grid. This is per button-->
     <style name="NumbersStyle">
         <item name="android:minWidth">@dimen/numbersWidth</item>
         <item name="android:layout_width">@dimen/numbersWidth</item>
