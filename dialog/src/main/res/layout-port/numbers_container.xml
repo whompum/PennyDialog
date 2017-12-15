@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:california="http://schemas.android.com/apk/res/android"
+    california:padding="16dp"
+    california:background="@drawable/card_bottom"
+    california:layout_width="wrap_content"
+    california:layout_height="wrap_content">
+
+<GridLayout
+    california:id="@id/numbersGrid"
+    california:columnCount="3"
+    california:rowCount="4"
+    california:layout_width="match_parent"
+    california:layout_height="match_parent">
+
+    <!-- ONE - TWO - THREE -->
+    <Button
+        style="@style/NumbersStyle"
+        california:text="@string/one" />
+    <Button
+        style="@style/NumbersStyle"
+        california:text="@string/two" />
+    <Button
+        style="@style/NumbersStyle"
+        california:text="@string/three" />
+
+
+    <!-- FOUR - FIVE - SIX -->
+    <Button
+        style="@style/NumbersStyle"
+        california:text="@string/four" />
+    <Button
+        style="@style/NumbersStyle"
+        california:text="@string/five" />
+    <Button
+        style="@style/NumbersStyle"
+        california:text="@string/six" />
+
+
+    <!-- SEVEN - EIGHT - NINE -->
+    <Button
+        style="@style/NumbersStyle"
+        california:text="@string/seven" />
+    <Button
+        style="@style/NumbersStyle"
+        california:text="@string/eight" />
+    <Button
+        style="@style/NumbersStyle"
+        california:text="@string/nine" />
+
+
+    <!-- BACK - ZERO - DEL -->
+    <ImageButton
+        style="@style/NumbersStyle"
+        california:id="@id/backspaceButton"
+        california:scaleType="centerInside"
+        california:padding="24dp"
+        california:src="@drawable/png_back_button" />
+    <Button
+        style="@style/NumbersStyle"
+        california:text="@string/naught" />
+    <Button
+        style="@style/NumbersStyle"
+        california:id="@id/deleteButton"
+        california:text="@string/delete" />
+
+</GridLayout>
+
+
+
+</FrameLayout>

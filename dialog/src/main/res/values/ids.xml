@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="numbersGrid" type="id"/>
+    <item name="valueEditText" type="id"/>
+
+    <item name="backspaceButton" type="id"/>
+    <item name="deleteButton" type="id"/>
+
+    <item name="doneFab" type="id"/>
+
+</resources>

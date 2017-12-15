@@ -27,6 +27,8 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    implementation 'com.github.whompum:currencyedittext:v1.0'
+
     implementation "com.android.support:design:${designSemVer}"
     implementation "com.android.support:appcompat-v7:${designSemVer}"
 
