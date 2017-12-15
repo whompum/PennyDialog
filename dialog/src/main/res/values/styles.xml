@@ -1,19 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:app="http://schemas.android.com/apk/com.whompum.pennydialog.dialog">
 
-    <style name="Dialog" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="valueCardColor">@color/light_blue</item>
-        <item name="numbersCardColor">@color/light_grey</item>
-        <item name="valueTextStyle">@style/ValueTextStyle</item>
-        <item name="doneFabBackgroundTint">@color/white</item>
+    <style name="Dialog" parent="Base.Theme.AppCompat.Light.Dialog">
+        <item name="pennyValueCardColor">@color/light_blue</item>
+        <item name="pennyNumbersCardColor">@color/light_grey</item>
+        <item name="pennyNumbersTextColor">@color/white</item>
+        <item name="pennyValueTextColor">@color/white</item>
+
+        <item name="pennyTitleTextColor">?attr/pennyValueTextColor</item>
+        <item name="pennyTitleText">""</item>
+
+        <item name="pennyFabColor">@color/white</item>
+
+        <item name="pennyTopLeftRadius">0dp</item>
+        <item name="pennyTopRightRadius">15dp</item>
+        <item name="pennyBottomLeftRadius">15dp</item>
+        <item name="pennyBottomRightRadius">15dp</item>
+
+        <item name="android:windowBackground">@null</item>
     </style>
+
+
 
     <style name="ValueTextStyle">
         <item name="android:textSize">@dimen/valueTextSize</item>
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">?attr/pennyValueTextColor</item>
         <item name="android:clickable">false</item>
         <item name="android:textCursorDrawable">@null</item>
-        <item name="android:maxLines">@dimen/valueMaxLines</item>
+        <item name="android:maxLines">1</item>
         <item name="android:layout_margin">@dimen/valueMargin</item>
         <item name="android:layout_gravity">center</item>
     </style>
@@ -24,7 +38,7 @@
         <item name="android:layout_height">@dimen/numbersHeight</item>
         <item name="android:padding">0dp</item>
         <item name="android:textSize">@dimen/numbersTextSize</item>
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">?attr/pennyNumbersTextColor</item>
         <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
     </style>
 

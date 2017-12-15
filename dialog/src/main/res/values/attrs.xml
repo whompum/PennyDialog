@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Penny Dialog user attributes
+        Define as needed-->
+
+    <attr name="pennyValueCardColor" format="color|reference"/>
+    <attr name="pennyNumbersCardColor" format="color|reference"/>
+    <attr name="pennyNumbersTextColor" format="color|reference"/>
+    <attr name="pennyValueTextColor" format="color|reference"/>
+    <attr name="pennyTitleTextColor" format="color|reference"/>
+    <attr name="pennyTitleText" format="string|reference"/>
+    <attr name="pennyFabColor" format="color|reference"/>
+    <attr name="pennyTopLeftRadius" format="dimension|reference"/>
+    <attr name="pennyTopRightRadius" format="dimension|reference"/>
+    <attr name="pennyBottomLeftRadius" format="dimension|reference"/>
+    <attr name="pennyBottomRightRadius" format="dimension|reference"/>
+
+
+</resources>
