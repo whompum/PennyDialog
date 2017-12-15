@@ -17,5 +17,6 @@
     <attr name="pennyBottomRightRadius" format="dimension|reference"/>
 
     <attr name="pennyFabBackgroundColor" format="color|reference"/>
+    <attr name="pennyFabSource" format="reference"/>
 
 </resources>

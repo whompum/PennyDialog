@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <dimen name="pennyDialogWidth">200dp</dimen>
-    <dimen name="valueMargin">60dp</dimen>
+
+
+    <!-- Value Texts margins Top / Bottom-->
+    <dimen name="valueMargin">55dp</dimen>
 
     <dimen name="titleTextSize">14sp</dimen>
     <dimen name="valueTextSize">32sp</dimen>
 
 
+    <dimen name="numbersCardPadding">32dp</dimen>
     <dimen name="numbersTextSize">24sp</dimen>
     <dimen name="numbersWidth">82dp</dimen>
     <dimen name="numbersHeight">63dp</dimen>
 
     <dimen name="numbersMargin">8dp</dimen>
 
-    <dimen name="doneFabMargin">16dp</dimen>
-
-
+    <!--pennyFab-->
+    <dimen name="pennyFabMargin">16dp</dimen>
+    <dimen name="pennyFabSrcPadding">12dp</dimen>
 
 </resources>

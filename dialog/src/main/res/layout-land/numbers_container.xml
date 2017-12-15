@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:california="http://schemas.android.com/apk/res/android"
-    california:padding="16dp"
+    california:padding="@dimen/numbersCardPadding"
     california:background="@drawable/card_right"
     california:layout_width="wrap_content"
     california:layout_height="wrap_content">

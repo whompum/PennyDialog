@@ -25,6 +25,7 @@
         <item name="pennyBottomRightRadius">15dp</item>
 
         <item name="pennyFabBackgroundColor">@color/white</item>
+        <item name="pennyFabSource">@drawable/ic_checkmark</item>
 
         <item name="android:windowBackground">@null</item>
     </style>
@@ -60,6 +61,18 @@
         <item name="android:textSize">@dimen/numbersTextSize</item>
         <item name="android:textColor">?attr/pennyNumbersTextColor</item>
         <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="PennyFabStyle">
+        <item name="fabSize">normal</item>
+        <item name="srcCompat">?attr/pennyFabSource</item>
+        <item name="backgroundTint">?attr/pennyFabBackgroundColor</item>
+        <item name="android:scaleType">centerInside</item>
+        <item name="android:scaleX">0</item>
+        <item name="android:scaleY">0</item>
+        <item name="android:visibility">invisible</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
     </style>
 
 
