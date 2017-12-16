@@ -2,11 +2,8 @@ package com.whompum.pennydialog.dialog;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.animation.ValueAnimator;
-import android.annotation.TargetApi;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
@@ -15,8 +12,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.DialogFragment;
-import android.support.v7.app.AppCompatDialogFragment;
-import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,8 +20,6 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.widget.Button;
 import android.widget.GridLayout;
-
-import org.w3c.dom.Attr;
 
 import currencyedittext.whompum.com.currencyedittext.CurrencyEditText;
 
@@ -56,7 +49,6 @@ public class PennyDialog extends DialogFragment implements View.OnClickListener 
     public static final String TAG = "PennyDialog";
 
     private static final int LAYOUT_RES = R.layout.penny_dialog_layout;
-
 
 
     public static final String STYLE_KEY = "STYLE";
@@ -157,10 +149,10 @@ public class PennyDialog extends DialogFragment implements View.OnClickListener 
 
         final Bundle args = getArguments();
 
-        int style = R.style.Dialog;
+        int style = R.style.PennyDialog;
 
         if(args!=null)
-        style = getArguments().getInt("STYLE", R.style.Dialog);
+        style = getArguments().getInt("STYLE", R.style.PennyDialog);
 
         final Dialog theD = new Dialog(this.getContext(), style);
         theD.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -181,7 +173,7 @@ public class PennyDialog extends DialogFragment implements View.OnClickListener 
         this.valueEditText = content.findViewById(R.id.valueEditText);
              valueEditText.setOnCurrencyChangeListener(valueChangeListener);
 
-        this.addTotalFab = content.findViewById(R.id.doneFab);
+        this.addTotalFab = content.findViewById(R.id.pennyFab);
              addTotalFab.setOnClickListener(this);
 
         initNumbersListener(content);

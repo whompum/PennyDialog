@@ -8,7 +8,7 @@
         change your wanted attributes, and pass the reference in a bundle
         to the newInstance() method of the PennyDialog!
     -->
-    <style name="Dialog" parent="Base.Theme.AppCompat.Light.Dialog">
+    <style name="PennyDialog" parent="Base.Theme.AppCompat.Light.Dialog">
         <item name="pennyValueCardColor">@color/light_blue</item>
         <item name="pennyNumbersCardColor">@color/light_grey</item>
         <item name="pennyNumbersTextColor">@color/white</item>
