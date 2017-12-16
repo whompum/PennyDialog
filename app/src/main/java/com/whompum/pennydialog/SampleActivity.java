@@ -17,6 +17,9 @@ public class SampleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sample);
 
+        final Bundle bundle = new Bundle();
+        bundle.putInt(PennyDialog.STYLE_KEY, R.style.MyDialog);
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,7 +34,7 @@ public class SampleActivity extends AppCompatActivity {
                    public void onCashChange(String cashValue) {
                        //Toast.makeText(SampleActivity.this, cashValue, Toast.LENGTH_SHORT).show();
                    }
-               }, null);
+               }, bundle);
                dialog.show(getSupportFragmentManager(), PennyDialog.TAG);
             }
         });
