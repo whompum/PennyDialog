@@ -5,6 +5,9 @@
 ## What this library is ##
 >PennyDialog is a currency selection dialog with a material aesthetic that privileges you with visual customization, and your users with the ability to input monetary values, at their locale, in an elegant way.
 
+![First Screenshot](screenshots/pennyDialog_screenshot_one.png)
+![Second Screenshot](screenshots/pennyDialog_screenshot_two.png)
+
 ## To use ##
 Create the dialog like you would any other DialogFragment, and pass your implementation of the **CashChangeListener**, to **PennyDialog.newInstance()**, to receive callbacks when the user has set a monetary value. E.G.
 
