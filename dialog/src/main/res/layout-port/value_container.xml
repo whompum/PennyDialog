@@ -15,6 +15,7 @@
 
     <currencyedittext.whompum.com.currencyedittext.CurrencyEditText
         style="@style/ValueTextStyle"
+        california:maxLines="2"
         california:id="@id/valueEditText"
         california:layout_width="wrap_content"
         california:layout_height="wrap_content" />

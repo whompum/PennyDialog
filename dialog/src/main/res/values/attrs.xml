@@ -10,7 +10,6 @@
     <attr name="pennyValueTextColor" format="color|reference"/>
     <attr name="pennyTitleTextColor" format="color|reference"/>
     <attr name="pennyTitleText" format="string|reference"/>
-    <attr name="pennyFabColor" format="color|reference"/>
     <attr name="pennyTopLeftRadius" format="dimension|reference"/>
     <attr name="pennyTopRightRadius" format="dimension|reference"/>
     <attr name="pennyBottomLeftRadius" format="dimension|reference"/>
