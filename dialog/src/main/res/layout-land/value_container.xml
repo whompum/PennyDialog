@@ -2,6 +2,7 @@
 <FrameLayout
     xmlns:california="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    california:minWidth="176dp"
     california:background="@drawable/card_left"
     california:padding="16dp"
     california:layout_width="wrap_content"
@@ -16,6 +17,12 @@
 
     <currencyedittext.whompum.com.currencyedittext.CurrencyEditText
         style="@style/ValueTextStyle"
+        california:gravity="center"
+        california:maxWidth="160dp"
+        california:minWidth="160dp"
+        california:layout_marginLeft="16dp"
+        california:layout_marginRight="16dp"
+        california:maxLines="4"
         california:id="@id/valueEditText"
         california:layout_width="wrap_content"
         california:layout_height="wrap_content" />
