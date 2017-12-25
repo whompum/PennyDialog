@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.support.annotation.NonNull;
@@ -20,6 +21,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.AnticipateInterpolator;
 import android.view.animation.Interpolator;
 import android.widget.Button;
 import android.widget.GridLayout;
@@ -276,7 +278,23 @@ public class PennyDialog extends DialogFragment implements View.OnClickListener 
             cashChangeListener.onCashChange(cash);
         }
 
-        dismiss();
+        final View decor = getDialog().getWindow().getDecorView();
+
+        if(decor != null) {
+
+            decor.animate().x(-1000).setInterpolator(new AnticipateInterpolator()).setDuration(500L).start();
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    dismiss();
+                }
+            }, 500L);
+
+        }else
+            dismiss();
+
+
     }
 
     /**
