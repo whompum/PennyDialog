@@ -4,6 +4,7 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.VibrationEffect;
@@ -12,10 +13,12 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.DialogFragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
 import android.widget.Button;
@@ -89,6 +92,8 @@ public class PennyDialog extends DialogFragment implements View.OnClickListener 
     private Interpolator fabInterpolator = new AccelerateDecelerateInterpolator();
 
 
+    private boolean useDim = false;
+
     /**
      * Creates an Instance of this object, and returns it to the client
      *
@@ -157,12 +162,31 @@ public class PennyDialog extends DialogFragment implements View.OnClickListener 
         final Dialog theD = new Dialog(this.getContext(), style);
         theD.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
+        //hide IME
+        if(theD.getWindow().getWindowManager() != null)
+            theD.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+
+
+
     return theD;
     }
 
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        final WindowManager.LayoutParams params = getDialog().getWindow().getAttributes();
+
+        if(params != null) {
+            params.dimAmount = 0.0f;
+            params.flags |= WindowManager.LayoutParams.FLAG_DIM_BEHIND;
+            getDialog().getWindow().setAttributes(params);
+        }
+    }
+
     /*
-      Will initialize views, and call initNumberListener()
-     */
+          Will initialize views, and call initNumberListener()
+         */
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -185,6 +209,7 @@ public class PennyDialog extends DialogFragment implements View.OnClickListener 
         }
 
         valueEditText.setText(cash);
+
 
     return content;
     }
@@ -215,6 +240,10 @@ public class PennyDialog extends DialogFragment implements View.OnClickListener 
             numbersGrid.getChildAt(a).setOnClickListener(this.numberClickListener);
     }
 
+
+    public void useDim(final boolean useDim){
+        this.useDim = useDim;
+    }
 
     /**
      * Set's the total for the EditText object
