@@ -28,6 +28,7 @@
         <item name="android:windowBackground">@null</item>
     </style>
 
+
     <!--Styling used for the title in the topright corner
         By default aligns the title to the top left-->
     <style name="TitleTextStyle">
@@ -66,8 +67,6 @@
         <item name="fabSize">mini</item>
         <item name="srcCompat">?attr/pennyFabSource</item>
         <item name="backgroundTint">?attr/pennyFabBackgroundColor</item>
-        <item name="android:padding">12dp</item>
-        <item name="android:scaleType">centerInside</item>
         <item name="android:scaleX">0</item>
         <item name="android:scaleY">0</item>
         <item name="android:visibility">invisible</item>
