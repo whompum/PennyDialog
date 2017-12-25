@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="rectangle">
+            <padding android:top="2dp" android:bottom="2dp"
+                     android:left="2dp" android:right="2dp"/>
+            <corners android:topLeftRadius="?attr/pennyTopLeftRadius"
+                android:topRightRadius="?attr/pennyTopRightRadius"
+                android:bottomLeftRadius="?attr/pennyBottomLeftRadius"
+                android:bottomRightRadius="?attr/pennyBottomRightRadius"/>
+            <solid android:color="#10CCCCCC"/>
+        </shape>
+    </item>
+
+    <item>
+        <shape android:shape="rectangle">
+            <padding android:top="2dp" android:bottom="2dp"
+                android:left="2dp" android:right="2dp"/>
+            <corners android:topLeftRadius="?attr/pennyTopLeftRadius"
+                android:topRightRadius="?attr/pennyTopRightRadius"
+                android:bottomLeftRadius="?attr/pennyBottomLeftRadius"
+                android:bottomRightRadius="?attr/pennyBottomRightRadius"/>
+            <solid android:color="#10CCCCCC"/>
+        </shape>
+    </item>
+
+    <item>
+        <shape android:shape="rectangle">
+            <padding android:top="2dp" android:bottom="2dp"
+                android:left="2dp" android:right="2dp"/>
+            <corners android:topLeftRadius="?attr/pennyTopLeftRadius"
+                android:topRightRadius="?attr/pennyTopRightRadius"
+                android:bottomLeftRadius="?attr/pennyBottomLeftRadius"
+                android:bottomRightRadius="?attr/pennyBottomRightRadius"/>
+            <solid android:color="#20CCCCCC"/>
+        </shape>
+    </item>
+
+
+    <item>
+        <shape android:shape="rectangle">
+            <padding android:top="2dp" android:bottom="2dp"
+                android:left="2dp" android:right="2dp"/>
+            <corners android:topLeftRadius="?attr/pennyTopLeftRadius"
+                android:topRightRadius="?attr/pennyTopRightRadius"
+                android:bottomLeftRadius="?attr/pennyBottomLeftRadius"
+                android:bottomRightRadius="?attr/pennyBottomRightRadius"/>
+            <solid android:color="#30CCCCCC"/>
+        </shape>
+    </item>
+
+    <item>
+        <shape android:shape="rectangle">
+            <padding android:top="2dp" android:bottom="2dp"
+                android:left="2dp" android:right="2dp"/>
+            <corners android:topLeftRadius="?attr/pennyTopLeftRadius"
+                android:topRightRadius="?attr/pennyTopRightRadius"
+                android:bottomLeftRadius="?attr/pennyBottomLeftRadius"
+                android:bottomRightRadius="?attr/pennyBottomRightRadius"/>
+            <solid android:color="#50CCCCCC"/>
+        </shape>
+    </item>
+
+    <item android:drawable="@drawable/drawable_shape_background_container"/>
+
+</layer-list>
