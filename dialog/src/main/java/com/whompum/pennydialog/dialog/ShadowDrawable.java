@@ -4,15 +4,11 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.ColorFilter;
-import android.graphics.Paint;
 import android.graphics.PixelFormat;
 import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.RectShape;
 import android.graphics.drawable.shapes.Shape;
 import android.os.Build;
 import android.support.annotation.DrawableRes;
@@ -27,7 +23,7 @@ public class ShadowDrawable extends ShapeDrawable {
 
 
     @DrawableRes
-    public static final int SHADOW_IMAGE = R.drawable.image_shadow;
+    public static final int SHADOW_IMAGE = R.drawable.penny_dialog_image_shadow;
 
 
     private Bitmap shadow;
@@ -35,7 +31,6 @@ public class ShadowDrawable extends ShapeDrawable {
 
     public ShadowDrawable(final Shape shape, final Resources resources){
         super(shape);
-
 
         if(Build.VERSION.SDK_INT >= 21)
             shadow = ((BitmapDrawable)resources.getDrawable(SHADOW_IMAGE, null)).getBitmap();
