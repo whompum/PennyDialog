@@ -18,15 +18,15 @@ import android.widget.FrameLayout;
 public class ShadowLayout extends FrameLayout {
 
 
-    public ShadowFrameLayout(@NonNull Context context) {
+    public ShadowLayout(@NonNull Context context) {
         super(context);
     }
 
-    public ShadowFrameLayout(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public ShadowLayout(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public ShadowFrameLayout(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public ShadowLayout(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -40,7 +40,7 @@ public class ShadowLayout extends FrameLayout {
     protected void onSizeChanged(int w, int h, int oldw, int oldh) {
         super.onSizeChanged(w, h, oldw, oldh);
 
-        final Drawable background = new ShadowDrawable(new RectShape(), getResources());
+        final Drawable background = new Shadow(new RectShape(), getResources());
         background.setBounds(0,0, w, h);
 
         if(Build.VERSION.SDK_INT >= 16)

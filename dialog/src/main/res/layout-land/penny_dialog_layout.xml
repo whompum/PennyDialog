@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<com.whompum.pennydialog.dialog.ShadowLayout
     xmlns:california="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     california:padding="16dp"
@@ -28,4 +28,4 @@
         california:id="@id/pennyFab" />
 
 </android.support.design.widget.CoordinatorLayout>
-</FrameLayout>
+</com.whompum.pennydialog.dialog.ShadowLayout>
