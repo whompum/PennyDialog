@@ -11,7 +11,7 @@
 
     <style name="MyDialog" parent="PennyDialog">
         <item name="pennyValueCardColor">#f9b8be</item>
-        <item name="pennyNumbersCardColor">#50666b</item>
+        <item name="pennyNumbersCardColor">@color/white</item>
         <item name="pennyFabBackgroundColor">@color/white</item>
         <item name="pennyTitleText">Enter Value</item>
     </style>
