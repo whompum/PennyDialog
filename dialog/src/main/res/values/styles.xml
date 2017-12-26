@@ -67,6 +67,7 @@
         <item name="fabSize">mini</item>
         <item name="srcCompat">?attr/pennyFabSource</item>
         <item name="backgroundTint">?attr/pennyFabBackgroundColor</item>
+        <item name="android:scaleType">center</item>
         <item name="android:scaleX">0</item>
         <item name="android:scaleY">0</item>
         <item name="android:visibility">invisible</item>
