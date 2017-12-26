@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
+import android.support.annotation.CallSuper;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -277,25 +278,20 @@ public class PennyDialog extends DialogFragment implements View.OnClickListener 
             cashChangeListener.onPenniesChange(pennies);
             cashChangeListener.onCashChange(cash);
         }
-
-        final View decor = getDialog().getWindow().getDecorView();
-
-        if(decor != null) {
-
-            decor.animate().x(-1000).setInterpolator(new AnticipateInterpolator()).setDuration(500L).start();
-
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    dismiss();
-                }
-            }, 500L);
-
-        }else
-            dismiss();
-
-
+        onDone();
     }
+
+
+    /**
+     * Called so a client can have a chance to do any close-up work
+     * before this dialog is dismissed
+     */
+    @CallSuper
+    public void onDone(){
+        dismiss();
+    }
+
+
 
     /**
      * Is used for when a number button is clicked upon;
