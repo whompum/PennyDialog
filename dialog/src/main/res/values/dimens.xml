@@ -2,21 +2,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Value Texts margins Top / Bottom-->
-    <dimen name="valueMargin">55dp</dimen>
+    <dimen name="dimen_penny_dialog_value_margin">55dp</dimen>
 
-    <dimen name="titleTextSize">14sp</dimen>
-    <dimen name="valueTextSize">32sp</dimen>
+    <dimen name="dimen_penny_dialog_title_text_size">14sp</dimen>
+    <dimen name="dimen_penny_dialog_value_text_size">32sp</dimen>
 
+    <dimen name="dimen_penny_dialog_numbers_padding">32dp</dimen>
+    <dimen name="dimen_penny_dialog_numbers_text_size">24sp</dimen>
+    <dimen name="dimen_penny_dialog_numbers_width">82dp</dimen>
+    <dimen name="dimen_penny_dialog_numbers_height">64dp</dimen>
 
-    <dimen name="numbersCardPadding">32dp</dimen>
-    <dimen name="numbersTextSize">24sp</dimen>
-    <dimen name="numbersWidth">82dp</dimen>
-    <dimen name="numbersHeight">64dp</dimen>
-
-    <dimen name="backspaceButtonPadding">24dp</dimen>
+    <dimen name="dimen_penny_dialog_backspace_button_padding">24dp</dimen>
 
     <!--pennyFab-->
-    <dimen name="pennyFabMargin">16dp</dimen>
-    <dimen name="pennyFabSrcPadding">12dp</dimen>
+    <dimen name="dimen_penny_dialog_fab_margin">16dp</dimen>
 
 </resources>

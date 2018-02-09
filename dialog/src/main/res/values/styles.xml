@@ -33,7 +33,7 @@
         By default aligns the title to the top left-->
     <style name="TitleTextStyle">
         <item name="android:layout_gravity">top|start|left</item>
-        <item name="android:textSize">@dimen/titleTextSize</item>
+        <item name="android:textSize">@dimen/dimen_penny_dialog_title_text_size</item>
         <item name="android:textColor">?attr/pennyTitleTextColor</item>
         <item name="android:text">?attr/pennyTitleText</item>
     </style>
@@ -42,23 +42,23 @@
     <style name="ValueTextStyle">
         <item name="android:focusable">false</item>
         <item name="android:background">@null</item>
-        <item name="android:textSize">@dimen/valueTextSize</item>
+        <item name="android:textSize">@dimen/dimen_penny_dialog_value_text_size</item>
         <item name="android:textColor">?attr/pennyValueTextColor</item>
         <item name="android:clickable">false</item>
         <item name="android:textCursorDrawable">@null</item>
         <item name="android:maxLines">1</item>
-        <item name="android:layout_marginTop">@dimen/valueMargin</item>
-        <item name="android:layout_marginBottom">@dimen/valueMargin</item>
+        <item name="android:layout_marginTop">@dimen/dimen_penny_dialog_value_margin</item>
+        <item name="android:layout_marginBottom">@dimen/dimen_penny_dialog_value_margin</item>
         <item name="android:layout_gravity">center</item>
     </style>
 
     <!--Styling applied on the number grid. This is per button-->
     <style name="NumbersStyle">
-        <item name="android:minWidth">@dimen/numbersWidth</item>
-        <item name="android:layout_width">@dimen/numbersWidth</item>
-        <item name="android:layout_height">@dimen/numbersHeight</item>
+        <item name="android:minWidth">@dimen/dimen_penny_dialog_numbers_width</item>
+        <item name="android:layout_width">@dimen/dimen_penny_dialog_numbers_width</item>
+        <item name="android:layout_height">@dimen/dimen_penny_dialog_numbers_height</item>
         <item name="android:padding">0dp</item>
-        <item name="android:textSize">@dimen/numbersTextSize</item>
+        <item name="android:textSize">@dimen/dimen_penny_dialog_numbers_text_size</item>
         <item name="android:textColor">?attr/pennyNumbersTextColor</item>
         <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
     </style>

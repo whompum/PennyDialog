@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:california="http://schemas.android.com/apk/res/android"
-    california:padding="@dimen/numbersCardPadding"
+    california:padding="@dimen/dimen_penny_dialog_numbers_padding"
     california:background="@drawable/card_bottom"
     california:layout_width="wrap_content"
     california:layout_height="wrap_content">
@@ -53,7 +53,7 @@
         style="@style/NumbersStyle"
         california:id="@id/backspaceButton"
         california:scaleType="centerInside"
-        california:padding="@dimen/backspaceButtonPadding"
+        california:padding="@dimen/dimen_penny_dialog_backspace_button_padding"
         california:src="@drawable/png_back_button" />
     <Button
         style="@style/NumbersStyle"

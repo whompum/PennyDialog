@@ -32,8 +32,8 @@
         app:layout_anchor="@id/valueFrame"
         app:layout_anchorGravity="center|bottom|end"
         california:id="@id/pennyFab"
-        california:layout_marginRight="@dimen/pennyFabMargin"
-        california:layout_marginEnd="@dimen/pennyFabMargin" />
+        california:layout_marginRight="@dimen/dimen_penny_dialog_fab_margin"
+        california:layout_marginEnd="@dimen/dimen_penny_dialog_fab_margin" />
 
 </android.support.design.widget.CoordinatorLayout>
 </com.whompum.pennydialog.dialog.ShadowLayout>
