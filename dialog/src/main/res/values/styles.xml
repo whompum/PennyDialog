@@ -26,6 +26,10 @@
         <item name="pennyFabSource">@drawable/ic_shape_plus_penny_dialog</item>
 
         <item name="android:windowBackground">@null</item>
+
+        <item name="android:windowEnterAnimation">@anim/penny_dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/penny_dialog_exit</item>
+
     </style>
 
 

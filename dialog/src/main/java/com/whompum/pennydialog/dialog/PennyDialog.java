@@ -165,10 +165,12 @@ public class PennyDialog extends DialogFragment implements View.OnClickListener 
         final Dialog theD = new Dialog(this.getContext(), style);
         theD.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-        //hide IME
-        if(theD.getWindow().getWindowManager() != null)
+        //Hide IME; Set Animations
+        if(theD.getWindow()!=null)
+        if(theD.getWindow().getWindowManager() != null) {
             theD.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-
+            theD.getWindow().getAttributes().windowAnimations = style;
+        }
 
 
     return theD;
