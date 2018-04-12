@@ -13,6 +13,7 @@ import android.os.Vibrator;
 import android.support.annotation.CallSuper;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.StringRes;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.DialogFragment;
 import android.util.Log;
@@ -26,6 +27,7 @@ import android.view.animation.AnticipateInterpolator;
 import android.view.animation.Interpolator;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.TextView;
 
 import currencyedittext.whompum.com.currencyedittext.CurrencyEditText;
 
@@ -84,16 +86,17 @@ public class PennyDialog extends DialogFragment implements View.OnClickListener 
     private CashChangeListener cashChangeListener = null; // Client impl to be invoked when the user enters a new total
 
 
+    private TextView titleTextView;
     private CurrencyEditText valueEditText;
     private FloatingActionButton addTotalFab = null;
 
+    private String title;
 
     private Vibrator vibrator; //vibrates buttons when pressed
 
     private VibrationEffect vibrationEffect;
 
     private Interpolator fabInterpolator = new AccelerateDecelerateInterpolator();
-
 
     private boolean useDim = false;
 
@@ -143,35 +146,28 @@ public class PennyDialog extends DialogFragment implements View.OnClickListener 
 
         if(Build.VERSION.SDK_INT >= 26)
             vibrationEffect = VibrationEffect.createOneShot(75L, 50);
-
-
     }
 
     @NonNull
     @Override //Creates the dialog
     public final Dialog onCreateDialog(Bundle savedInstanceState) {
-
         /**
          *Fetch arguments, for styling and what not
          */
-
-        final Bundle args = getArguments();
-
         int style = R.style.PennyDialog;
 
-        if(args!=null)
-        style = getArguments().getInt("STYLE", R.style.PennyDialog);
+        if(getArguments()!= null)
+            style = getArguments().getInt("STYLE", R.style.PennyDialog);
 
         final Dialog theD = new Dialog(this.getContext(), style);
         theD.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-        //Hide IME; Set Animations
+        //Hide IME; Set Animations;
         if(theD.getWindow()!=null)
         if(theD.getWindow().getWindowManager() != null) {
             theD.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
             theD.getWindow().getAttributes().windowAnimations = style;
         }
-
 
     return theD;
     }
@@ -189,15 +185,19 @@ public class PennyDialog extends DialogFragment implements View.OnClickListener 
         }
     }
 
-    /*
-          Will initialize views, and call initNumberListener()
-         */
+
+    //Will initialize views, and call initNumberListener()
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         //Attach to root should be set to true maybe?
         final View content = inflater.inflate(LAYOUT_RES, container, true);
+
+        this.titleTextView = content.findViewById(R.id.title);
+
+        if( title!=null)
+            titleTextView.setText(title);
 
         this.valueEditText = content.findViewById(R.id.valueEditText);
              valueEditText.setOnCurrencyChangeListener(valueChangeListener);
@@ -207,14 +207,12 @@ public class PennyDialog extends DialogFragment implements View.OnClickListener 
 
         initNumbersListener(content);
 
-
         if(savedInstanceState!=null) {
             cash = savedInstanceState.getString(CASH_KEY, "0");
             pennies = savedInstanceState.getLong(PENNY_KEY, 0L);
         }
 
         valueEditText.setText(cash);
-
 
     return content;
     }
@@ -229,7 +227,6 @@ public class PennyDialog extends DialogFragment implements View.OnClickListener 
         outState.putLong(PENNY_KEY, pennies);
         outState.putString(CASH_KEY, cash);
         super.onSaveInstanceState(outState);
-
     }
 
     /**
@@ -245,6 +242,18 @@ public class PennyDialog extends DialogFragment implements View.OnClickListener 
             numbersGrid.getChildAt(a).setOnClickListener(this.numberClickListener);
     }
 
+
+    public void setTitle(@StringRes final int titleRes){
+        setTitle(getString(titleRes));
+    }
+
+    public void setTitle(final String title){
+        if(isResumed())
+            titleTextView.setText(title);
+        else
+            this.title = title;
+
+    }
 
     public void useDim(final boolean useDim){
         this.useDim = useDim;
@@ -264,7 +273,6 @@ public class PennyDialog extends DialogFragment implements View.OnClickListener 
         this.cashChangeListener = cashChangeListener;
     }
 
-
     /**
      *
      * Only our fab will be linked to this callback since its will invoke
@@ -272,9 +280,12 @@ public class PennyDialog extends DialogFragment implements View.OnClickListener 
      *
      * @param view Should always be a FloatingActionButton
      */
+    @CallSuper
     @Override
     public void onClick(View view) {
-        //TODO add window transition!
+
+        if( !(view instanceof FloatingActionButton) )
+            throw new IllegalArgumentException("This view must be linked to a Fab");
 
         if(cashChangeListener!=null) {
             cashChangeListener.onPenniesChange(pennies);

@@ -20,8 +20,7 @@ public class SampleActivity extends AppCompatActivity {
         final Bundle bundle = new Bundle();
         bundle.putInt(PennyDialog.STYLE_KEY, R.style.MyDialog);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.fab).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                PennyDialog dialog = PennyDialog.newInstance(new PennyDialog.CashChangeListener() {
@@ -36,8 +35,12 @@ public class SampleActivity extends AppCompatActivity {
                    }
                }, bundle);
                dialog.show(getSupportFragmentManager(), PennyDialog.TAG);
+
+               dialog.setTitle("NEWLY MADE TITLE");
+
             }
         });
+
     }
 
 }
