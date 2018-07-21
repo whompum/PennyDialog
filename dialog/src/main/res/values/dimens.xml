@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
     <!-- Value Texts margins Top / Bottom-->
     <dimen name="dimen_penny_dialog_value_margin">55dp</dimen>
