@@ -100,6 +100,8 @@ public class PennyDialog extends DialogFragment implements View.OnClickListener 
 
     private boolean useDim = false;
 
+    private boolean tapped = false; //Used to block double taps
+
     /**
      * Creates an Instance of this object, and returns it to the client
      *
@@ -283,6 +285,10 @@ public class PennyDialog extends DialogFragment implements View.OnClickListener 
     @CallSuper
     @Override
     public void onClick(View view) {
+
+        if(tapped) return;
+
+        tapped = true;
 
         if( !(view instanceof FloatingActionButton) )
             throw new IllegalArgumentException("This view must be linked to a Fab");
