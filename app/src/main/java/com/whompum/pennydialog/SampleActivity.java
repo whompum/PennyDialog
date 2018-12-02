@@ -29,6 +29,7 @@ public class SampleActivity extends AppCompatActivity {
                PennyDialog dialog = PennyDialog.newInstance(new PennyDialog.CashChangeListener() {
                    @Override
                    public void onPenniesChange(long pennies) {
+                       Log.i("DOUBLE_TAP_FIX", "I've been tapped :o");
                         Toast.makeText(SampleActivity.this, String.valueOf(pennies), Toast.LENGTH_SHORT).show();
                    }
 
