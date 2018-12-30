@@ -54,7 +54,7 @@
         california:id="@id/backspaceButton"
         california:scaleType="centerInside"
         california:padding="@dimen/dimen_penny_dialog_backspace_button_padding"
-        california:src="@drawable/png_back_button" />
+        california:src="?attr/pennyBackspaceBtnSrc" />
     <Button
         style="@style/NumbersStyle"
         california:text="@string/naught" />
