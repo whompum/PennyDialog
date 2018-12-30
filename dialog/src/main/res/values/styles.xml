@@ -9,12 +9,6 @@
         to the newInstance() method of the PennyDialog!
     -->
     <style name="PennyDialog" parent="Base.Theme.AppCompat.Light.Dialog">
-        <item name="pennyValueCardColor">@color/color_penny_dialog_header</item>
-        <item name="pennyNumbersCardColor">@color/color_penny_dialog_body</item>
-        <item name="pennyNumbersTextColor">@color/white</item>
-        <item name="pennyValueTextColor">@color/white</item>
-
-        <item name="pennyTitleTextColor">?attr/pennyValueTextColor</item>
         <item name="pennyTitleText">@string/title</item>
 
         <item name="pennyTopLeftRadius">0dp</item>
@@ -22,7 +16,9 @@
         <item name="pennyBottomLeftRadius">15dp</item>
         <item name="pennyBottomRightRadius">15dp</item>
 
-        <item name="pennyFabBackgroundColor">@color/white</item>
+        <item name="pennyBackspaceBtnSrc">@drawable/png_back_button_dark</item>
+
+        <item name="pennyFabBackgroundColor">@color/color_white</item>
         <item name="pennyFabSource">@drawable/ic_shape_plus_penny_dialog</item>
 
         <item name="android:windowBackground">@null</item>
@@ -32,6 +28,33 @@
 
     </style>
 
+    <style name="PennyDialog.Custom">
+        <item name="pennyValueCardColor">@color/color_penny_dialog_header</item>
+        <item name="pennyNumbersCardColor">@color/color_penny_dialog_body</item>
+        <item name="pennyNumbersTextColor">@color/color_white</item>
+        <item name="pennyValueTextColor">@color/color_white</item>
+        <item name="pennyTitleTextColor">?attr/pennyValueTextColor</item>
+        <item name="pennyBackspaceBtnSrc">@drawable/png_back_button_dark</item>
+
+    </style>
+
+    <style name="PennyDialog.Light">
+        <item name="pennyNumbersCardColor">@color/color_milk_white</item>
+        <item name="pennyValueCardColor">@color/color_white</item>
+        <item name="pennyNumbersTextColor">@color/color_grey</item>
+        <item name="pennyValueTextColor">@color/color_grey</item>
+        <item name="pennyBackspaceBtnSrc">@drawable/png_back_button_dark</item>
+        <item name="pennyTitleTextColor">?attr/pennyValueTextColor</item>
+    </style>
+
+    <style name="PennyDialog.Dark">
+        <item name="pennyNumbersCardColor">@color/color_dark_grey</item>
+        <item name="pennyValueCardColor">@color/color_grey</item>
+        <item name="pennyNumbersTextColor">@color/color_milk_white</item>
+        <item name="pennyValueTextColor">@color/color_milk_white</item>
+        <item name="pennyTitleTextColor">?attr/pennyValueTextColor</item>
+        <item name="pennyBackspaceBtnSrc">@drawable/png_back_button_light</item>
+    </style>
 
     <!--Styling used for the title in the topright corner
         By default aligns the title to the top left-->
