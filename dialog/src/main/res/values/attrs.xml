@@ -14,7 +14,7 @@
     <attr name="pennyTopRightRadius" format="dimension|reference"/>
     <attr name="pennyBottomLeftRadius" format="dimension|reference"/>
     <attr name="pennyBottomRightRadius" format="dimension|reference"/>
-
+    <attr name="pennyBackspaceBtnSrc" format="reference"/>
     <attr name="pennyFabBackgroundColor" format="color|reference"/>
     <attr name="pennyFabSource" format="reference"/>
 
