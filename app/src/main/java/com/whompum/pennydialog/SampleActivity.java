@@ -21,7 +21,7 @@ public class SampleActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sample);
 
         final Bundle bundle = new Bundle();
-        bundle.putInt(PennyDialog.STYLE_KEY, R.style.MyDialog);
+        bundle.putInt(PennyDialog.STYLE_KEY, R.style.PennyDialog_Dark);
 
         findViewById(R.id.fab).setOnClickListener(new View.OnClickListener() {
             @Override
