@@ -1,3 +1,5 @@
+[![](https://jitpack.io/v/whompum/PennyDialog.svg)](https://jitpack.io/#whompum/PennyDialog)
+
 # Penny Dialog! #
 
 >Currency dialog library.
@@ -49,6 +51,7 @@ Extend PennyDialog's **PennyDialog** base theme, and override any attributes you
      pennyTopRightRadius - radius to round the top right corner
      pennyBottomLeftRadius - radius to round the bottom left corner
      pennyBottomRightRadius - radius to round the bottom right corner
+     pennyBackspaceBtnSrc - drawable resource to use for the backspace button
 
      pennyFabBackgroundColor - Color for the background of the FloatingActionButton
      pennyFabSource - Src drawable for the FloatingActionButton 
